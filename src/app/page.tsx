@@ -67,11 +67,11 @@ export default function Component() {
             setSelectedSection(id);
             setIsMobileMenuOpen(false);
           }}
-          className={`p-4 rounded-lg border-2 flex items-center gap-2 transition-all transform hover:scale-105 w-full
+          className={`p-3.5 rounded-lg border-2 flex items-center gap-2 transition-all transform hover:scale-105 mx-auto
             ${selectedSection === id 
               ? 'bg-emerald-600 border-yellow-300 shadow-lg shadow-emerald-500/50' 
               : 'bg-indigo-900/50 border-emerald-400 hover:bg-emerald-600/50'}
-            ${isSidebarCollapsed ? 'justify-center' : ''}`}
+            ${isSidebarCollapsed ? 'justify-center w-16' : 'w-full'}`}
           title={label}
         >
           <Icon className="animate-pulse" /> 
@@ -85,11 +85,11 @@ export default function Component() {
     <div className="min-h-screen bg-gradient-to-b from-indigo-900 via-indigo-800 to-emerald-900 text-white font-mono">
       <div className="flex flex-col lg:flex-row min-h-screen">
         {/* サイドバー - デスクトップ */}
-        <div className={`hidden lg:flex flex-col ${isSidebarCollapsed ? 'w-20' : 'w-64'} p-6 bg-indigo-900/50 border-r-2 border-emerald-400 space-y-4 transition-all duration-300`}>
+        <div className={`hidden lg:flex flex-col ${isSidebarCollapsed ? 'w-28' : 'w-64'} p-4 bg-indigo-900/50 border-r-2 border-emerald-400 space-y-4 transition-all duration-300 `}>
           <NavigationItems />
           <button
             onClick={toggleSidebar}
-            className="mt-auto p-2 bg-emerald-600 rounded-lg self-center"
+            className={`mt-auto p-3.5 bg-emerald-600 rounded-lg mx-auto ${isSidebarCollapsed ? 'w-16' : 'w-full'}`}
           >
             {isSidebarCollapsed ? <ChevronRight size={24} /> : <ChevronLeft size={24} />}
           </button>
